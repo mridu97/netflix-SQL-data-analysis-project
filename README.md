@@ -47,12 +47,14 @@ Use the **"Table Data Import Wizard"** feature available in MySQL Workbench:
 ### Method 2: Python Script (Alternative)
 If the import wizard is slow or fails to load the file, you can import the data using a Python script with **Pandas** and **SQLAlchemy** or **mysql-connector-python**.
 
-- import pandas as pd
-- from sqlalchemy import create_engine
-- df = pd.read_csv("netflix_titles.csv")   NOTE: Make sure your file is in the same directory or give a relative path
-- engine = create_engine("mysql+mysqlconnector://<username>:<password>@<host>/<database_name>")
-- df.to_sql('netflix_title', con=engine, if_exists='replace', index=False)
-- print("Data imported successfully.")
+<pre>```
+import pandas as pd
+from sqlalchemy import create_engine
+df = pd.read_csv("netflix_titles.csv")   NOTE: Make sure your file is in the same directory or give a relative path
+engine = create_engine("mysql+mysqlconnector://<username>:<password>@<host>/<database_name>")
+df.to_sql('netflix_title', con=engine, if_exists='replace', index=False)
+print("Data imported successfully.")```</pre>
+
 
 ## Data exploration
 - Identified and replaced NULL values in columns with 'None'. 
