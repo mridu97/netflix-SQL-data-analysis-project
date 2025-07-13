@@ -32,8 +32,8 @@ Columns:
 
  ## Database and table creation 
  
- CREATE DATABASE netflix_db;
- CREATE TABLE netflix_title (show_id VARCHAR(10) PRIMARY KEY, category VARCHAR(200), title VARCHAR(200), director TEXT, cast   TEXT, country VARCHAR(200), date_added VARCHAR(100), release_year int, rating VARCHAR(50), duration VARCHAR(50), listed_in    VARCHAR(200), summary TEXT);
+- CREATE DATABASE netflix_db;
+- CREATE TABLE netflix_title (show_id VARCHAR(10) PRIMARY KEY, category VARCHAR(200), title VARCHAR(200), director TEXT, cast   TEXT, country VARCHAR(200), date_added VARCHAR(100), release_year int, rating VARCHAR(50), duration VARCHAR(50), listed_in    VARCHAR(200), summary TEXT);
 
 ## Data import 
 You can load the CSV file into MySQL using either of the following methods:
@@ -47,12 +47,12 @@ Use the **"Table Data Import Wizard"** feature available in MySQL Workbench:
 ### Method 2: Python Script (Alternative)
 If the import wizard is slow or fails to load the file, you can import the data using a Python script with **Pandas** and **SQLAlchemy** or **mysql-connector-python**.
 
-import pandas as pd
-from sqlalchemy import create_engine
-df = pd.read_csv("netflix_titles.csv") NOTE: Make sure your file is in the same directory or give a relative path
-engine = create_engine("mysql+mysqlconnector://<username>:<password>@<host>/<database_name>")
-df.to_sql('netflix_title', con=engine, if_exists='replace', index=False)
-print("Data imported successfully.")
+- import pandas as pd
+- from sqlalchemy import create_engine
+- df = pd.read_csv("netflix_titles.csv")   NOTE: Make sure your file is in the same directory or give a relative path
+- engine = create_engine("mysql+mysqlconnector://<username>:<password>@<host>/<database_name>")
+- df.to_sql('netflix_title', con=engine, if_exists='replace', index=False)
+- print("Data imported successfully.")
 
 ## Data exploration
 - Identified and replaced NULL values in columns with 'None'. 
